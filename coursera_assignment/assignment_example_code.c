@@ -40,4 +40,18 @@ double forcast_savings(int total_months, double initial_salary, double salary_ra
   return initial_savings
 }
 
-     
+
+// returns a pointer to the largest element in the array passed in
+
+int * arrayMax(int * array, int n) {
+        if (n == 0) {
+             return NULL;
+        }
+        int temp_indice = 0;
+        for (int i = 1; i < n; i++) {
+                if (array[i] > array[temp_indice]) {
+                        temp_indice = i;
+                }
+        }
+        return &array[temp_indice];
+}
