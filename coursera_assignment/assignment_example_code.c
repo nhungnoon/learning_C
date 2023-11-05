@@ -55,3 +55,22 @@ int * arrayMax(int * array, int n) {
         }
         return &array[temp_indice];
 }
+
+// rever a given string
+void reverse(char * str) {
+  if (str == NULL || *str == '\0') {
+    return;
+  }
+  size_t i;
+  size_t str_len = strnlen(str, 100);
+  char copy_str[100];
+
+  for (i = 0; i < str_len && str[i] != '\0'; i++)
+    copy_str[i] = str[str_len-i-1];
+  copy_str[str_len] = '\0';
+  
+  
+  for (i = 0; i < str_len && copy_str[i] != '\0'; i++)
+    str[i] = copy_str[i];
+  str[str_len] = '\0';
+}
